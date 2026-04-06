@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>冯泽宇 - AI算法工程师简历</title>
+<style>
+  @page { size: A4; margin: 20mm 22mm 20mm 22mm; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans CJK SC", sans-serif;
+    font-size: 11pt; line-height: 1.7; color: #000; background: #f5f5f5;
+  }
+  .page {
+    width: 210mm; min-height: 297mm; background: #fff;
+    margin: 0 auto 16px auto; padding: 28mm 24mm;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08); position: relative; page-break-after: always;
+  }
+  .page:last-child { page-break-after: avoid; }
+  .header-row { display: flex; align-items: center; justify-content: center; gap: 28px; margin-bottom: 4px; }
+  .photo { width: 110px; height: auto; border: 2px solid #1a2a3a; border-radius: 4px; flex-shrink: 0; }
+  .header-text { text-align: center; }
+  .name { font-size: 26pt; font-weight: 700; letter-spacing: 4px; color: #000; margin-bottom: 2px; }
+  .subtitle { font-size: 11pt; color: #555; letter-spacing: 2px; padding-bottom: 12px; border-bottom: 2px solid #1a2a3a; }
+  .section { margin-bottom: 16px; }
+  .section-title {
+    font-size: 14pt; font-weight: 700; color: #000;
+    padding: 4px 0 4px 10px; border-left: 4px solid #1a2a3a;
+    margin-bottom: 10px; letter-spacing: 1px;
+  }
+  .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 24px; }
+  .info-item { display: flex; gap: 8px; }
+  .info-label { color: #555; white-space: nowrap; min-width: 60px; }
+  .info-value { color: #000; }
+  .job-goal { background: #f0f7ff; border: 2px solid #1a2a3a; border-radius: 8px; padding: 12px 16px; margin-bottom: 14px; }
+  .job-goal .title { font-size: 13pt; font-weight: 700; color: #000; margin-bottom: 6px; }
+  .job-goal .items { display: flex; flex-wrap: wrap; gap: 6px; }
+  .job-goal .item { background: #1a2a3a; color: #fff; padding: 3px 12px; border-radius: 15px; font-size: 10pt; }
+  .highlight-box { background: #f0fff0; border: 2px solid #228B22; border-radius: 8px; padding: 12px 16px; margin-bottom: 14px; }
+  .highlight-box .box-title { font-size: 12pt; font-weight: 700; color: #000; margin-bottom: 8px; }
+  .highlight-box .box-content { font-size: 10.5pt; color: #000; line-height: 1.6; }
+  .project-box { background: #f9f9f9; border-left: 3px solid #1a2a3a; padding: 10px 14px; margin-bottom: 10px; }
+  .project-title { font-size: 11pt; font-weight: 700; color: #000; margin-bottom: 4px; }
+  .project-content { font-size: 10pt; color: #333; line-height: 1.5; }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .skill-tag { background: #e8f0fe; color: #1a56db; padding: 3px 10px; border-radius: 12px; font-size: 9.5pt; }
+  .skill-tag-dark { background: #1a2a3a; color: #fff; padding: 3px 10px; border-radius: 12px; font-size: 9.5pt; }
+  .teach-table { width: 100%; border-collapse: collapse; font-size: 10.5pt; color: #000; }
+  .teach-table th { background: #1a2a3a; color: #fff; padding: 5px 10px; text-align: left; font-weight: 600; }
+  .teach-table td { padding: 5px 10px; border-bottom: 1px solid #e8e8; color: #000; }
+  .teach-table tr:nth-child(even) td { background: #f9fafb; }
+  .paper-list { list-style: none; padding: 0; }
+  .paper-list li { margin-bottom: 6px; font-size: 10pt; line-height: 1.5; color: #000; }
+  .paper-num { display: inline-block; min-width: 18px; font-weight: 700; color: #000; }
+  .paper-journal { font-style: italic; color: #555; }
+  .tag-in-review { background: #e8f0fe; color: #1a56db; font-size: 8pt; padding: 1px 6px; border-radius: 3px; margin-left: 4px; }
+  .advantage-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .advantage-item { background: #f9f9f9; padding: 10px 12px; border-radius: 6px; }
+  .advantage-item .adv-title { font-weight: 700; color: #000; font-size: 10.5pt; margin-bottom: 3px; }
+  .advantage-item .adv-content { font-size: 10pt; color: #333; }
+  .sep { border: none; border-top: 1px dashed #ccc; margin: 12px 0; }
+  .page-num { position: absolute; bottom: 14mm; right: 24mm; font-size: 9pt; color: #000; }
+  .subsection { font-size: 12pt; font-weight: 700; color: #000; margin-bottom: 8px; }
+  .courses { font-size: 10pt; color: #333; line-height: 1.7; }
+  @media print {
+    body { background: #fff; }
+    .page { box-shadow: none; margin: 0; padding: 18mm 20mm 18mm 20mm; }
+  }
+</style>
+</head>
+<body>
+
+<!-- 第一页 -->
+<div class="page">
+  <div class="header-row">
+    <img class="photo" src="photo.jpg" alt="证件照">
+    <div class="header-text">
+      <div class="name">冯泽宇</div>
+      <div class="subtitle">AI算法工程师 / 大模型应用工程师</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">基本信息</div>
+    <div class="info-grid">
+      <div class="info-item"><span class="info-label">学历</span><span class="info-value">博士研究生</span></div>
+      <div class="info-item"><span class="info-label">毕业院校</span><span class="info-value">西南财经大学 · 数学学院</span></div>
+      <div class="info-item"><span class="info-label">专业</span><span class="info-value">数理金融学</span></div>
+      <div class="info-item"><span class="info-label">研究方向</span><span class="info-value">复杂系统建模 · 金融计量 · AI应用</span></div>
+      <div class="info-item"><span class="info-label">电话</span><span class="info-value">18973253969</span></div>
+      <div class="info-item"><span class="info-label">邮箱</span><span class="info-value">sxjl3496@vip.qq.com</span></div>
+    </div>
+  </div>
+
+  <div class="job-goal">
+    <div class="title">🎯 求职目标</div>
+    <div class="items">
+      <span class="item">RAG系统开发</span>
+      <span class="item">LLM微调优化</span>
+      <span class="item">AI Agent开发</span>
+      <span class="item">智能应用架构</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">核心技术能力</div>
+
+  <div class="highlight-box">
+    <div class="box-title">🤖 AI大模型应用开发</div>
+    <div class="box-content">
+      • <strong>RAG系统</strong>：独立开发基于LangChain的科研文献检索系统，优化分片策略与检索链路，提升关键信息召回准确率<br>
+      • <strong>LLM微调</strong>：具备LoRA/QLoRA微调实战经验，针对金融文本分析、仿真建模等场景优化模型适配性<br>
+      • <strong>AI Agent</strong>：基于OpenClaw框架完成二次开发，集成文档处理、多维表格管理、消息检索、图片分析等模块<br>
+      • <strong>AI辅助开发</strong>：熟练使用Claude Code、OpenCode等AI代码Agent，赋能高效开发与模型调参
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <div class="box-title">🔬 算法与建模</div>
+    <div class="box-content">
+      • 精通贝叶斯全局优化与代理模型建模，具备高维复杂参数空间寻优、仿真模型校准实战经验<br>
+      • 深耕基于Agent的建模（ABM）方法，擅长复杂系统仿真与政策效果模拟<br>
+      • 掌握主流因果推断方法：PSM-DID、RDD、IV、OLS、DDD、Logit、Probit等
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="skill-tags">
+      <span class="skill-tag-dark">LangChain</span>
+      <span class="skill-tag-dark">PyTorch</span>
+      <span class="skill-tag-dark">LLM微调</span>
+      <span class="skill-tag-dark">RAG</span>
+      <span class="skill-tag-dark">向量数据库</span>
+      <span class="skill-tag-dark">贝叶斯优化</span>
+      <span class="skill-tag-dark">ABM建模</span>
+      <span class="skill-tag-dark">Python</span>
+      <span class="skill-tag-dark">NetLogo</span>
+      <span class="skill-tag-dark">AI Agent</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">AI实战项目</div>
+
+  <div class="project-box">
+    <div class="project-title">🔧 个人AI助手开发（基于OpenClaw框架）</div>
+    <div class="project-content">
+      独立完成框架二次开发，针对个人使用场景定制化开发飞书机器人助手<br>
+      集成模块：文档处理、多维表格管理、消息检索、图片分析<br>
+      实现基于技能池的动态能力调度，支持自然语言指令理解与任务自动分配
+    </div>
+  </div>
+
+  <div class="project-box">
+    <div class="project-title">📚 科研文献知识检索系统（基于RAG）</div>
+    <div class="project-content">
+      基于LangChain搭建检索增强生成系统，整合个人文献库<br>
+      实现文献片段检索、知识关联、问答式总结功能，显著提升科研文献阅读效率<br>
+      针对学术文献特点优化分片与检索策略，提升关键信息召回准确率
+    </div>
+  </div>
+  </div>
+
+  <div class="page-num">1</div>
+</div>
+
+<!-- 第二页 -->
+<div class="page">
+  <div class="section">
+    <div class="section-title">教育背景</div>
+    <div class="project-box">
+      <div class="project-title">博士 · 西南财经大学 · 数学学院 · 数理金融学</div>
+      <div class="project-content">
+        研究方向：复杂系统建模与实证分析、金融政策效果评估<br>
+        博士论文：《改善彩民结构与彩票销量的理论、实证及仿真研究》<br>
+        代码开源：github.com/sxjl3496-spec/The-Research-on-Improving-the-Structure-of-Lottery-Players-and-Lottery-Sales
+      </div>
+    </div>
+    <div class="subsection" style="margin-top:12px;">主修课程</div>
+    <div class="courses">
+      高级计量经济学 · 高级宏观经济学 · 数理经济学 · 行为经济学 · 概率论 · 金融随机分析 · 高级数理金融学 · Python数据分析
+    </div>
+  </div>
+
+  <hr class="sep">
+
+  <div class="section">
+    <div class="section-title">学术成果</div>
+    <ol class="paper-list">
+      <li><span class="paper-num">1.</span> 吴朝霞, 冯泽宇. 排污权交易政策对不同规模企业的影响研究——基于PSM-DID方法[J]. <span class="paper-journal">产业经济评论</span>, 2021(01): 119-136.</li>
+      <li><span class="paper-num">2.</span> 刘亚军, 冯泽宇. 农产品电商上行的包容性商业模式构建策略仿真研究[J]. <span class="paper-journal">湘潭大学学报</span>, 2023, 47(06): 38-45.</li>
+      <li><span class="paper-num">3.</span> Zeyu Feng. Impact of Online Lottery Sales Prohibition on the Structure of Lottery Consumers[J]. <span class="paper-journal">PLOS ONE</span>, 2025, 17(8).</li>
+      <li><span class="paper-num">4.</span> Zeyu Feng, Kaiwen Meng. Effects of Maximum Payout Limits on Lottery Participant Composition[J]. <span class="paper-journal">JASSS</span>, 2025: 533–546.</li>
+      <li><span class="paper-num">5.</span> Zeyu Feng. Convenience and Inequality: How Income Shapes Sports Lottery Participation[J]. <span class="paper-journal">Social Choice & Welfare</span>, 2025, 65(4).</li>
+    </ol>
+    <div class="subsection" style="margin-top:10px;">在投 / 待发表</div>
+    <ol class="paper-list" start="6">
+      <li><span class="paper-num">6.</span> 冯泽宇. 收入异质性视角下购彩便利性对体育竞猜型彩票购买的影响. <span class="paper-journal">消费经济</span> <span class="tag-in-review">在投</span></li>
+      <li><span class="paper-num">7.</span> 冯泽宇. 彩票消费的双重预期驱动：来自金融情绪与经济信心的证据. <span class="paper-journal">财经研究</span> <span class="tag-in-review">在投</span></li>
+    </ol>
+  </div>
+
+  <hr class="sep">
+
+  <div class="section">
+    <div class="section-title">教学经历（加分项）</div>
+    <table class="teach-table">
+      <thead><tr><th>时间</th><th>单位</th><th>角色</th></tr></thead>
+      <tbody>
+        <tr><td>2025年9月 – 2026年1月</td><td>湖南科技大学 · 外国语学院</td><td>高等数学教师</td></tr>
+        <tr><td>2024年9月 – 2025年2月</td><td>西南财经大学</td><td>高等数学教学助理</td></tr>
+        <tr><td>2022年9月 – 2024年2月</td><td>成都中医药大学</td><td>外聘教师（高等数学）</td></tr>
+        <tr><td>2017年 – 2020年</td><td>文都教育集团</td><td>考研数学讲师、经济学1V1授课</td></tr>
+      </tbody>
+    </table>
+    <div style="margin-top:8px; font-size:10pt; color:#333;">
+      累计课堂授课 <strong>500+ 小时</strong>，具备将复杂技术概念用浅显语言讲解的能力
+    </div>
+  </div>
+
+  <hr class="sep">
+
+  <div class="section">
+    <div class="section-title">个人优势</div>
+    <div class="advantage-grid">
+      <div class="advantage-item">
+        <div class="adv-title">🧠 学科交叉</div>
+        <div class="adv-content">数学+金融+AI复合背景，擅长将复杂建模能力迁移到AI场景</div>
+      </div>
+      <div class="advantage-item">
+        <div class="adv-title">🔬 研究驱动</div>
+        <div class="adv-content">严谨学术训练，具备从问题定义到方案落地的完整研究能力</div>
+      </div>
+      <div class="advantage-item">
+        <div class="adv-title">🎓 教学经验</div>
+        <div class="adv-content">5年以上高校教学经历，累计授课 500+ 小时</div>
+      </div>
+      <div class="advantage-item">
+        <div class="adv-title">🚀 快速学习</div>
+        <div class="adv-content">对新工具、新框架上手快，持续跟进大模型前沿技术</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-num">2</div>
+</div>
+
+</body>
+</html>
