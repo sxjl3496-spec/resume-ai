@@ -14,27 +14,14 @@
     overflow-x: hidden;
   }
   
-  /* Cyberpunk grid background */
   body::before {
     content: '';
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
     background: 
       linear-gradient(transparent 0%, rgba(0,255,255,0.03) 50%, transparent 100%),
-      repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 50px,
-        rgba(0,255,255,0.05) 50px,
-        rgba(0,255,255,0.05) 51px
-      ),
-      repeating-linear-gradient(
-        90deg,
-        transparent,
-        transparent 50px,
-        rgba(255,0,255,0.05) 50px,
-        rgba(255,0,255,0.05) 51px
-      );
+      repeating-linear-gradient(0deg, transparent, transparent 50px, rgba(0,255,255,0.05) 50px, rgba(0,255,255,0.05) 51px),
+      repeating-linear-gradient(90deg, transparent, transparent 50px, rgba(255,0,255,0.05) 50px, rgba(255,0,255,0.05) 51px);
     pointer-events: none;
     z-index: -1;
     animation: gridMove 20s linear infinite;
@@ -55,31 +42,17 @@
   }
   .page:last-child { page-break-after: avoid; }
   
-  /* Scanline effect */
   .page::before {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: repeating-linear-gradient(
-      0deg,
-      rgba(0,0,0,0.1) 0px,
-      rgba(0,0,0,0.1) 1px,
-      transparent 1px,
-      transparent 2px
-    );
+    background: repeating-linear-gradient(0deg, rgba(0,0,0,0.1) 0px, rgba(0,0,0,0.1) 1px, transparent 1px, transparent 2px);
     pointer-events: none;
     z-index: 100;
   }
   
   .header-row { display: flex; align-items: center; justify-content: center; gap: 28px; margin-bottom: 4px; }
-  .photo { 
-    width: 110px; height: auto; 
-    border: 2px solid #0ff; 
-    border-radius: 4px; 
-    flex-shrink: 0; 
-    box-shadow: 0 0 20px rgba(0,255,255,0.5);
-    animation: borderGlow 2s ease-in-out infinite alternate;
-  }
+  .photo { width: 110px; height: auto; border: 2px solid #0ff; border-radius: 4px; flex-shrink: 0; box-shadow: 0 0 20px rgba(0,255,255,0.5); animation: borderGlow 2s ease-in-out infinite alternate; }
   
   @keyframes borderGlow {
     0% { box-shadow: 0 0 20px rgba(0,255,255,0.5); }
@@ -87,12 +60,7 @@
   }
   
   .header-text { text-align: center; }
-  .name { 
-    font-size: 26pt; font-weight: 700; letter-spacing: 4px; color: #0ff; 
-    margin-bottom: 2px; 
-    text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff;
-    animation: glitch 3s infinite;
-  }
+  .name { font-size: 26pt; font-weight: 700; letter-spacing: 4px; color: #0ff; margin-bottom: 2px; text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff; animation: glitch 3s infinite; }
   
   @keyframes glitch {
     0%, 90%, 100% { text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff; transform: translate(0); }
@@ -101,109 +69,38 @@
     96% { text-shadow: 0 0 10px #0ff, 0 0 20px #0ff; transform: translate(0); }
   }
   
-  .subtitle { 
-    font-size: 11pt; color: #ff0080; 
-    letter-spacing: 2px; 
-    padding-bottom: 12px; 
-    border-bottom: 2px solid #ff0080;
-    text-shadow: 0 0 10px #ff0080;
-  }
+  .subtitle { font-size: 11pt; color: #ff0080; letter-spacing: 2px; padding-bottom: 12px; border-bottom: 2px solid #ff0080; text-shadow: 0 0 10px #ff0080; }
   
   .section { margin-bottom: 16px; }
-  .section-title {
-    font-size: 14pt; font-weight: 700; color: #0ff;
-    padding: 4px 0 4px 10px; border-left: 4px solid #ff0080;
-    margin-bottom: 10px; letter-spacing: 1px;
-    text-shadow: 0 0 5px #0ff;
-    animation: fadeSlideIn 0.5s ease-out;
-  }
-  
-  @keyframes fadeSlideIn {
-    from { opacity: 0; transform: translateX(-20px); }
-    to { opacity: 1; transform: translateX(0); }
-  }
+  .section-title { font-size: 14pt; font-weight: 700; color: #0ff; padding: 4px 0 4px 10px; border-left: 4px solid #ff0080; margin-bottom: 10px; letter-spacing: 1px; text-shadow: 0 0 5px #0ff; }
   
   .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 24px; }
   .info-item { display: flex; gap: 8px; }
   .info-label { color: #ff0080; white-space: nowrap; min-width: 60px; text-shadow: 0 0 5px #ff0080; }
   .info-value { color: #fff; }
   
-  .job-goal { 
-    background: rgba(255,0,128,0.1); 
-    border: 2px solid #ff0080; 
-    border-radius: 8px; padding: 12px 16px; margin-bottom: 14px;
-    box-shadow: 0 0 20px rgba(255,0,128,0.2);
-  }
+  .job-goal { background: rgba(255,0,128,0.1); border: 2px solid #ff0080; border-radius: 8px; padding: 12px 16px; margin-bottom: 14px; box-shadow: 0 0 20px rgba(255,0,128,0.2); }
   .job-goal .title { font-size: 13pt; font-weight: 700; color: #ff0080; margin-bottom: 6px; text-shadow: 0 0 10px #ff0080; }
   .job-goal .items { display: flex; flex-wrap: wrap; gap: 6px; }
-  .job-goal .item { 
-    background: linear-gradient(135deg, #ff0080, #ff00ff); 
-    color: #fff; padding: 3px 12px; border-radius: 15px; font-size: 10pt;
-    box-shadow: 0 0 10px rgba(255,0,128,0.5);
-    transition: all 0.3s ease;
-  }
-  .job-goal .item:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 20px rgba(255,0,255,0.8);
-  }
+  .job-goal .item { background: linear-gradient(135deg, #ff0080, #ff00ff); color: #fff; padding: 3px 12px; border-radius: 15px; font-size: 10pt; box-shadow: 0 0 10px rgba(255,0,128,0.5); }
   
-  .highlight-box { 
-    background: rgba(0,255,255,0.05); 
-    border: 2px solid #0ff; 
-    border-radius: 8px; padding: 12px 16px; margin-bottom: 14px;
-    box-shadow: 0 0 15px rgba(0,255,255,0.2);
-    transition: all 0.3s ease;
-  }
-  .highlight-box:hover {
-    box-shadow: 0 0 30px rgba(0,255,255,0.4);
-    transform: translateY(-2px);
-  }
+  .highlight-box { background: rgba(0,255,255,0.05); border: 2px solid #0ff; border-radius: 8px; padding: 12px 16px; margin-bottom: 14px; box-shadow: 0 0 15px rgba(0,255,255,0.2); }
   .highlight-box .box-title { font-size: 12pt; font-weight: 700; color: #0ff; margin-bottom: 8px; text-shadow: 0 0 5px #0ff; }
   .highlight-box .box-content { font-size: 10.5pt; color: #ccc; line-height: 1.6; }
   .highlight-box .box-content strong { color: #0ff; }
   
-  .project-box { 
-    background: rgba(255,0,255,0.05); 
-    border-left: 3px solid #ff0080; 
-    padding: 10px 14px; margin-bottom: 10px;
-    transition: all 0.3s ease;
-  }
-  .project-box:hover {
-    background: rgba(255,0,255,0.1);
-    box-shadow: 0 0 15px rgba(255,0,128,0.3);
-    transform: translateX(5px);
-  }
+  .project-box { background: rgba(255,0,255,0.05); border-left: 3px solid #ff0080; padding: 10px 14px; margin-bottom: 10px; }
   .project-title { font-size: 11pt; font-weight: 700; color: #ff0080; margin-bottom: 4px; text-shadow: 0 0 5px #ff0080; }
   .project-content { font-size: 10pt; color: #aaa; line-height: 1.5; }
   
   .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-  .skill-tag { 
-    background: rgba(0,255,255,0.1); 
-    color: #0ff; padding: 3px 10px; border-radius: 12px; font-size: 9.5pt;
-    border: 1px solid rgba(0,255,255,0.3);
-    transition: all 0.3s ease;
-  }
-  .skill-tag:hover {
-    background: rgba(0,255,255,0.3);
-    box-shadow: 0 0 15px rgba(0,255,255,0.5);
-    transform: translateY(-2px);
-  }
-  .skill-tag-dark { 
-    background: linear-gradient(135deg, rgba(255,0,255,0.3), rgba(0,255,255,0.3));
-    color: #fff; padding: 3px 10px; border-radius: 12px; font-size: 9.5pt;
-    border: 1px solid #ff0080;
-    transition: all 0.3s ease;
-  }
-  .skill-tag-dark:hover {
-    box-shadow: 0 0 20px rgba(255,0,255,0.5);
-    transform: translateY(-2px);
-  }
+  .skill-tag { background: rgba(0,255,255,0.1); color: #0ff; padding: 3px 10px; border-radius: 12px; font-size: 9.5pt; border: 1px solid rgba(0,255,255,0.3); }
+  .skill-tag-dark { background: linear-gradient(135deg, rgba(255,0,255,0.3), rgba(0,255,255,0.3)); color: #fff; padding: 3px 10px; border-radius: 12px; font-size: 9.5pt; border: 1px solid #ff0080; }
   
   .teach-table { width: 100%; border-collapse: collapse; font-size: 10.5pt; color: #fff; }
   .teach-table th { background: linear-gradient(90deg, #ff0080, #0ff); color: #000; padding: 5px 10px; text-align: left; font-weight: 600; }
   .teach-table td { padding: 5px 10px; border-bottom: 1px solid rgba(255,0,255,0.2); color: #ccc; }
   .teach-table tr:nth-child(even) td { background: rgba(0,255,255,0.05); }
-  .teach-table tr:hover td { background: rgba(255,0,128,0.1); }
   
   .paper-list { list-style: none; padding: 0; }
   .paper-list li { margin-bottom: 6px; font-size: 10pt; line-height: 1.5; color: #ccc; }
@@ -212,17 +109,7 @@
   .tag-in-review { background: rgba(0,255,255,0.2); color: #0ff; font-size: 8pt; padding: 1px 6px; border-radius: 3px; margin-left: 4px; }
   
   .advantage-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-  .advantage-item { 
-    background: rgba(255,0,255,0.05); 
-    padding: 10px 12px; border-radius: 6px;
-    border: 1px solid rgba(255,0,128,0.3);
-    transition: all 0.3s ease;
-  }
-  .advantage-item:hover {
-    background: rgba(255,0,255,0.1);
-    box-shadow: 0 0 20px rgba(255,0,128,0.3);
-    transform: translateY(-3px);
-  }
+  .advantage-item { background: rgba(255,0,255,0.05); padding: 10px 12px; border-radius: 6px; border: 1px solid rgba(255,0,128,0.3); }
   .advantage-item .adv-title { font-weight: 700; color: #0ff; font-size: 10.5pt; margin-bottom: 3px; text-shadow: 0 0 5px #0ff; }
   .advantage-item .adv-content { font-size: 10pt; color: #aaa; }
   
@@ -231,31 +118,7 @@
   .subsection { font-size: 12pt; font-weight: 700; color: #ff0080; margin-bottom: 8px; text-shadow: 0 0 5px #ff0080; }
   .courses { font-size: 10pt; color: #aaa; line-height: 1.7; }
   
-  /* Page scroll animation */
-  .page {
-    animation: pageIn 0.8s ease-out;
-  }
-  @keyframes pageIn {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  
-  /* Neon flicker */
-  @keyframes neonFlicker {
-    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-      text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff;
-    }
-    20%, 24%, 55% {
-      text-shadow: none;
-    }
-  }
-  
-  @media print { 
-    body { background: #fff; } 
-    .page { box-shadow: none; margin: 0; padding: 18mm 20mm 18mm 20mm; background: #fff; color: #000; }
-    .name { color: #000; text-shadow: none; }
-    .subtitle { color: #333; }
-  }
+  @media print { body { background: #fff; } .page { box-shadow: none; margin: 0; padding: 18mm 20mm 18mm 20mm; background: #fff; color: #000; } .name { color: #000; text-shadow: none; } .subtitle { color: #333; } }
 </style>
 </head>
 <body>
@@ -265,7 +128,7 @@
     <img class="photo" src="photo.jpg" alt="证件照">
     <div class="header-text">
       <div class="name">冯泽宇</div>
-      <div class="subtitle">AI算法工程师 / 大模型应用工程师</div>
+      <div class="subtitle">AI算法 / 大模型开发 / 大模型应用</div>
     </div>
   </div>
 
@@ -275,22 +138,20 @@
       <div class="info-item"><span class="info-label">学历</span><span class="info-value">博士研究生</span></div>
       <div class="info-item"><span class="info-label">毕业院校</span><span class="info-value">西南财经大学 · 数学学院</span></div>
       <div class="info-item"><span class="info-label">专业</span><span class="info-value">数理金融学</span></div>
-      <div class="info-item"><span class="info-label">研究方向</span><span class="info-value">复杂系统建模 · 金融计量 · AI应用</span></div>
+      <div class="info-item"><span class="info-label">研究方向</span><span class="info-value">不确定性决策 · 金融计量 · 复杂系统建模</span></div>
+      <div class="info-item"><span class="info-label">政治面貌</span><span class="info-value">中共党员</span></div>
       <div class="info-item"><span class="info-label">电话</span><span class="info-value">18973253969</span></div>
-      <div class="info-item"><span class="info-label">邮箱</span><span class="info-value">sxjl3496@gmail.com</span></div>
       <div class="info-item"><span class="info-label">微信</span><span class="info-value">sxjl3496</span></div>
+      <div class="info-item"><span class="info-label">邮箱</span><span class="info-value">sxjl3496@gmail.com</span></div>
     </div>
   </div>
-
-  <div class="info-item"><span class="info-label">政治面貌</span><span class="info-value">中共党员</span></div>
 
   <div class="job-goal">
     <div class="title">🎯 求职目标</div>
     <div class="items">
-      <span class="item">RAG系统开发</span>
-      <span class="item">LLM微调优化</span>
-      <span class="item">AI Agent开发</span>
-      <span class="item">智能应用架构</span>
+      <span class="item">AI算法开发</span>
+      <span class="item">大模型应用</span>
+      <span class="item">复杂系统建模</span>
     </div>
   </div>
 
@@ -298,23 +159,31 @@
     <div class="section-title">核心技术能力</div>
 
   <div class="highlight-box">
-    <div class="box-title">🤖 AI工具掌握</div>
+    <div class="box-title">🤖 建模仿真（核心壁垒）</div>
     <div class="box-content">
-      • 对OpenClaw"龙虾"进行深度开发，打造专属超级远程助手<br>
-      • 基于Claude Code 51万行源代码进行二次开发，打造个人专属Agent<br>
-      • 熟练掌握Vscode、Cursor等IDE工具嵌入LaTeX进行学术论文编写与排版<br>
-      • 熟练掌握Claude Code、OpenClaw、Codex、OpenCode等多Agent协作工具，方便多Agent协作进行论文辅助写作、数据处理<br>
-      • 熟练掌握MySQL等关系型数据库，能熟练编写和优化SQL语句；熟练掌握Python、Stata、NetLogo等代码与脚本的运行，用于数据分析与复杂系统建模<br>
-      • 建立学术写作知识库，整合文献管理、笔记整理与检索功能，提升科研效率
+      • <strong>复杂系统建模</strong>：基于Agent的建模（ABM），构建多主体仿真系统，模拟真实世界中个体决策行为与交互模式<br>
+      • <strong>贝叶斯优化</strong>：高维参数空间寻优、代理模型构建、仿真模型校准，具备从理论推导到数值实现的完整能力<br>
+      • <strong>因果推断</strong>：PSM-DID、RDD（断点回归）、IV（工具变量）、DDD（三重差分）、合成控制等方法，擅长从观测数据中识别因果效应
     </div>
   </div>
 
   <div class="highlight-box">
-    <div class="box-title">🔬 算法与建模</div>
+    <div class="box-title">💻 编程与数据处理</div>
     <div class="box-content">
-      • 精通贝叶斯全局优化与代理模型建模，具备高维复杂参数空间寻优、仿真模型校准实战经验<br>
-      • 深耕基于Agent的建模（ABM）方法，擅长复杂系统仿真与政策效果模拟<br>
-      • 掌握主流因果推断方法：PSM-DID、RDD、IV、OLS、DDD、Logit、Probit等
+      • 精通Python数据分析、数值仿真与算法工程化实现<br>
+      • 熟练掌握SQL（MySQL）数据库查询与优化<br>
+      • 熟悉主流AI框架：LangChain、Pytorch、VectorDB（Milvus/Pinecone）<br>
+      • 熟练使用NetLogo进行ABM仿真建模
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <div class="box-title">🛠️ 工具与工程化</div>
+    <div class="box-content">
+      • 熟练掌握Git版本控制与开源协作<br>
+      • 熟练使用LaTeX进行学术写作与论文排版<br>
+      • <strong>OpenClaw"龙虾"远程协作</strong>：熟练运用OpenClaw框架进行远程实时脚本编写、任务自动化与多工具调度，能够高效完成复杂任务流程<br>
+      • 掌握多Agent协作工具链（Claude Code、OpenClaw等），具备复杂任务自动化处理能力
     </div>
   </div>
 
@@ -330,37 +199,37 @@
       <span class="skill-tag-dark">Python</span>
       <span class="skill-tag-dark">NetLogo</span>
       <span class="skill-tag-dark">Claude Code</span>
-      <span class="skill-tag-dark">AI Agent</span>
+      <span class="skill-tag-dark">OpenClaw</span>
     </div>
   </div>
 
   <div class="section">
-    <div class="section-title">AI实战项目</div>
+    <div class="section-title">研究项目作品集</div>
 
   <div class="project-box">
-    <div class="project-title">🦞 个人超级Agent"龙虾"（基于OpenClaw开发）</div>
+    <div class="project-title">🔬 ABM彩票消费行为仿真系统</div>
     <div class="project-content">
-      对OpenClaw"龙虾"进行了开发，打造了属于自己的超级远程助手；然后基于Claude Code 51万行源代码对Claude Code进行了二次开发<br>
-      实现复杂任务自动化处理、多工具调度，自然语言指令理解与任务自动分配<br>
-      集成文档处理、多维表格管理、消息检索、图片分析等模块，显著提升个人工作效率
+      <strong>项目地址：</strong>github.com/sxjl3496-spec/The-Research-on-Improving-the-Structure-of-Lottery-Players-and-Lottery-Sales<br>
+      <strong>研究内容：</strong>构建多主体仿真模型，模拟彩民决策行为与市场均衡，融合贝尔曼方程与行为经济学理论<br>
+      <strong>核心技能：</strong>ABM建模、贝叶斯参数校准、代理模型、Monte Carlo仿真<br>
+      <strong>代码完全开源</strong>
     </div>
   </div>
 
   <div class="project-box">
-    <div class="project-title">🔧 个人AI助手开发（基于OpenClaw框架）</div>
+    <div class="project-title">📊 因果推断方法工具集</div>
     <div class="project-content">
-      独立完成框架二次开发，针对个人使用场景定制化开发飞书机器人助手<br>
-      集成模块：文档处理、多维表格管理、消息检索、图片分析<br>
-      实现基于技能池的动态能力调度，支持自然语言指令理解与任务自动分配
+      <strong>实现内容：</strong>PSM-DID、RDD、IV等计量方法的Python实现，已整合进入个人分析工具链<br>
+      <strong>核心技能：</strong>因果分析、统计建模、非结构化数据处理<br>
+      <strong>应用场景：</strong>政策效果评估、消费行为分析、异质性处理效应研究
     </div>
   </div>
 
   <div class="project-box">
-    <div class="project-title">📚 科研文献知识检索系统（基于RAG）</div>
+    <div class="project-title">🤖 大模型应用开发</div>
     <div class="project-content">
-      基于LangChain搭建检索增强生成系统，整合个人文献库<br>
-      实现文献片段检索、知识关联、问答式总结功能，显著提升科研文献阅读效率<br>
-      针对学术文献特点优化分片与检索策略，提升关键信息召回准确率
+      <strong>RAG知识库系统：</strong>基于LangChain搭建检索增强生成系统，整合个人文献库，实现问答式文献检索<br>
+      <strong>多Agent协作系统：</strong>基于Claude Code 51万行源代码进行深度二次开发，实时跟进全球最前沿Agent技术进展，构建高效代码生成与智能辅助工作流
     </div>
   </div>
   </div>
@@ -381,7 +250,24 @@
     </div>
     <div class="subsection" style="margin-top:12px;">主修课程</div>
     <div class="courses">
-      高级计量经济学 · 高级宏观经济学 · 数理经济学 · 行为经济学 · 概率论 · 金融随机分析 · 高级数理金融学 · Python数据分析
+      高级计量经济学 · 高级宏观经济学 · 数理经济学 · 行为经济学 · 概率论 · 金融随机分析 · 高级数理金融学 · ABM建模 · 贝叶斯统计
+    </div>
+  </div>
+
+  <hr class="sep">
+
+  <div class="section">
+    <div class="section-title">教育技能</div>
+    <table class="teach-table">
+      <thead><tr><th>时间</th><th>单位</th><th>角色</th></tr></thead>
+      <tbody>
+        <tr><td>2025年9月 – 2026年1月</td><td>湖南科技大学 · 外国语学院</td><td>高等数学教师</td></tr>
+        <tr><td>2022年 – 2024年</td><td>西南财经大学 / 成都中医药大学</td><td>外聘教师/教学助理</td></tr>
+        <tr><td>2017年 – 2020年</td><td>文都教育集团</td><td>考研数学讲师、经济学1V1授课</td></tr>
+      </tbody>
+    </table>
+    <div style="margin-top:8px; font-size:10pt; color:#aaa;">
+      累计课堂授课 <strong style="color:#ff0080;">500+ 小时</strong>，具备将复杂技术概念转化为清晰表达的能力。擅长跨学科沟通，能够在技术团队与业务方之间搭建理解桥梁。
     </div>
   </div>
 
@@ -390,35 +276,17 @@
   <div class="section">
     <div class="section-title">学术成果</div>
     <ol class="paper-list">
-      <li><span class="paper-num">1.</span> 吴朝霞, 冯泽宇. 排污权交易政策对不同规模企业的影响研究——基于PSM-DID方法[J]. <span class="paper-journal">产业经济评论</span>, 2021(01): 119-136.</li>
-      <li><span class="paper-num">2.</span> 刘亚军, 冯泽宇. 农产品电商上行的包容性商业模式构建策略仿真研究[J]. <span class="paper-journal">湘潭大学学报</span>, 2023, 47(06): 38-45.</li>
-      <li><span class="paper-num">3.</span> Zeyu Feng. Impact of Online Lottery Sales Prohibition on the Structure of Lottery Consumers[J]. <span class="paper-journal">PLOS ONE</span>, 2025, 17(8).</li>
-      <li><span class="paper-num">4.</span> Zeyu Feng, Kaiwen Meng. Effects of Maximum Payout Limits on Lottery Participant Composition[J]. <span class="paper-journal">JASSS</span>, 2025: 533–546.</li>
-      <li><span class="paper-num">5.</span> Zeyu Feng. Convenience and Inequality: How Income Shapes Sports Lottery Participation[J]. <span class="paper-journal">Social Choice & Welfare</span>, 2025, 65(4).</li>
+      <li><span class="paper-num">1.</span> 吴朝霞, 冯泽宇. 排污权交易政策对不同规模企业的影响研究——基于PSM-DID方法的研究[J]. <span class="paper-journal">产业经济评论</span>, 2021(01): 119-136.</li>
+      <li><span class="paper-num">2.</span> 刘亚军, 冯泽宇. 鱼与熊掌如何兼得：农产品电商上行的包容性商业模式构建策略仿真研究[J]. <span class="paper-journal">湘潭大学学报(哲学社会科学版)</span>, 2023, 47(06): 38-45.</li>
+      <li><span class="paper-num">3.</span> Zeyu Feng. Impact of Online Lottery Sales Prohibition on the Structure of Lottery Consumers: A Time Cost Perspective in China[J]. <span class="paper-journal">PLOS ONE</span>, 2025, 17(8).</li>
+      <li><span class="paper-num">4.</span> Zeyu Feng, Kaiwen Meng. Effects of Maximum Payout Limits on Lottery Participant Composition[J]. <span class="paper-journal">Journal of Artificial Societies and Social Simulation</span>, 2026, 29(1): 112-135.</li>
+      <li><span class="paper-num">5.</span> Zeyu Feng. Convenience and Inequality: How Income Shapes the Effect of Accessibility on Sports Lottery Participation in China[J]. <span class="paper-journal">Social Choice and Welfare</span>, 2026, 66(2): 287-314.</li>
     </ol>
-    <div class="subsection" style="margin-top:10px;">在投 / 待发表</div>
+    <div class="subsection" style="margin-top:10px;">待发表</div>
     <ol class="paper-list" start="6">
-      <li><span class="paper-num">6.</span> 冯泽宇. 收入异质性视角下购彩便利性对体育竞猜型彩票购买的影响. <span class="paper-journal">消费经济</span> <span class="tag-in-review">在投</span></li>
-      <li><span class="paper-num">7.</span> 冯泽宇. 彩票消费的双重预期驱动：来自金融情绪与经济信心的证据. <span class="paper-journal">财经研究</span> <span class="tag-in-review">在投</span></li>
+      <li><span class="paper-num">6.</span> 冯泽宇. 收入异质性视角下购彩便利性对体育竞猜型彩票购买的影响. <span class="paper-journal">消费经济</span> <span class="tag-in-review">待发表</span></li>
+      <li><span class="paper-num">7.</span> 冯泽宇. 彩票消费的双重预期驱动：来自金融情绪与经济信心的证据. <span class="paper-journal">财经研究</span> <span class="tag-in-review">待发表</span></li>
     </ol>
-  </div>
-
-  <hr class="sep">
-
-  <div class="section">
-    <div class="section-title">教学经历（加分项）</div>
-    <table class="teach-table">
-      <thead><tr><th>时间</th><th>单位</th><th>角色</th></tr></thead>
-      <tbody>
-        <tr><td>2025年9月 – 2026年1月</td><td>湖南科技大学 · 外国语学院</td><td>高等数学教师</td></tr>
-        <tr><td>2024年9月 – 2025年2月</td><td>西南财经大学</td><td>高等数学教学助理</td></tr>
-        <tr><td>2022年9月 – 2024年2月</td><td>成都中医药大学</td><td>外聘教师（高等数学）</td></tr>
-        <tr><td>2017年 – 2020年</td><td>文都教育集团</td><td>考研数学讲师、经济学1V1授课</td></tr>
-      </tbody>
-    </table>
-    <div style="margin-top:8px; font-size:10pt; color:#ff0080;">
-      累计课堂授课 <strong>500+ 小时</strong>，具备将复杂技术概念用浅显语言讲解的能力
-    </div>
   </div>
 
   <hr class="sep">
@@ -435,12 +303,16 @@
         <div class="adv-content">严谨学术训练，具备从问题定义到方案落地的完整研究能力</div>
       </div>
       <div class="advantage-item">
-        <div class="adv-title">🎓 教学经验</div>
-        <div class="adv-content">5年以上高校教学经历，累计授课 500+ 小时</div>
+        <div class="adv-title">🎓 教育技能</div>
+        <div class="adv-content">500+小时教学经历，复杂技术概念转化与跨学科沟通能力</div>
       </div>
       <div class="advantage-item">
         <div class="adv-title">🚀 快速学习</div>
-        <div class="adv-content">对新工具、新框架上手快，持续跟进大模型前沿技术</div>
+        <div class="adv-content">对全球最前沿AI工具持续跟踪，实时跟进Claude Code、OpenClaw等Agent技术进展</div>
+      </div>
+      <div class="advantage-item">
+        <div class="adv-title">📦 代码开源</div>
+        <div class="adv-content">博士论文ABM仿真代码与数据已开源至GitHub</div>
       </div>
     </div>
   </div>
