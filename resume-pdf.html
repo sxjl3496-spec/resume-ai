@@ -5,102 +5,151 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>冯泽宇 - 个人简历（PDF版）</title>
 <style>
-  @page { size: A4; margin: 15mm 20mm 15mm 20mm; }
+  @page { size: A4; margin: 12mm 18mm 12mm 18mm; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   
   body {
-    font-family: "Times New Roman", "微软雅黑", Arial, sans-serif;
-    font-size: 10.5pt; line-height: 1.6; color: #222;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "微软雅黑", Arial, sans-serif;
+    font-size: 10pt; line-height: 1.65; color: #2c3e50;
     background: #fff; max-width: 210mm; margin: 0 auto;
   }
   
   /* ===== Header ===== */
   .header {
+    background: linear-gradient(135deg, #0f4c75 0%, #1a6fa0 50%, #3282b8 100%);
+    color: #fff;
+    padding: 20px 24px 16px;
     text-align: center;
-    padding-bottom: 12px;
-    border-bottom: 2px solid #1a1a1a;
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,0.03) 35px, rgba(255,255,255,0.03) 70px);
+    pointer-events: none;
+  }
+  .header-content { position: relative; z-index: 1; }
+  .name { font-size: 26pt; font-weight: 800; letter-spacing: 6px; color: #fff; margin-bottom: 6px; }
+  .subtitle { font-size: 11pt; color: rgba(255,255,255,0.9); letter-spacing: 3px; font-weight: 400; }
+  
+  .info-bar {
+    background: #f8fafc;
+    border-left: 4px solid #3282b8;
+    border-right: 4px solid #3282b8;
+    padding: 8px 16px;
+    display: flex; flex-wrap: wrap; gap: 4px 16px;
+    font-size: 9pt; color: #555;
     margin-bottom: 14px;
   }
-  .name { font-size: 22pt; font-weight: 700; letter-spacing: 3px; color: #111; }
-  .subtitle { font-size: 11pt; color: #555; letter-spacing: 1px; margin-top: 4px; }
-  
-  /* ===== Info ===== */
-  .info-bar {
-    display: flex; flex-wrap: wrap; gap: 4px 20px;
-    font-size: 9.5pt; color: #333;
-    margin-bottom: 14px; justify-content: center;
-  }
   .info-bar span { white-space: nowrap; }
+  .info-dot { color: #3282b8; margin-right: 2px; }
   
   /* ===== Section ===== */
   .section { margin-bottom: 12px; }
   .section-title {
-    font-size: 11pt; font-weight: 700; color: #fff;
-    background: #1a1a1a;
-    padding: 3px 10px;
-    margin-bottom: 8px;
-    letter-spacing: 1px;
+    font-size: 10.5pt; font-weight: 700; color: #fff;
+    background: linear-gradient(90deg, #0f4c75, #3282b8);
+    padding: 5px 12px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    border-radius: 4px;
   }
   
   /* ===== Objective ===== */
   .objective {
-    background: #f5f5f5;
-    border-left: 3px solid #1a1a1a;
-    padding: 8px 12px;
+    background: linear-gradient(135deg, #e8f4fc 0%, #d4edf7 100%);
+    border-left: 4px solid #0f4c75;
+    padding: 10px 14px;
     margin-bottom: 12px;
-    font-size: 10pt;
+    border-radius: 0 6px 6px 0;
   }
-  .objective-title { font-weight: 700; margin-bottom: 4px; font-size: 10.5pt; }
-  .objective-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+  .objective-title { font-weight: 700; color: #0f4c75; margin-bottom: 6px; font-size: 10pt; }
+  .objective-tags { display: flex; flex-wrap: wrap; gap: 5px; }
   .tag {
-    background: #1a1a1a; color: #fff;
-    padding: 2px 8px; border-radius: 2px; font-size: 9pt;
+    background: linear-gradient(135deg, #0f4c75, #3282b8);
+    color: #fff;
+    padding: 3px 10px; border-radius: 20px; font-size: 8.5pt;
+    box-shadow: 1px 1px 3px rgba(15,76,117,0.3);
   }
   
   /* ===== Skills ===== */
-  .skills-row { display: flex; flex-wrap: wrap; gap: 4px 8px; }
+  .skills-row { display: flex; flex-wrap: wrap; gap: 5px 8px; }
   .skill {
-    background: #e8e8e8; color: #333;
-    padding: 2px 8px; border-radius: 2px; font-size: 9pt;
+    background: #eaf4fb; color: #0f4c75;
+    padding: 2px 9px; border-radius: 20px; font-size: 8.5pt;
+    border: 1px solid #b8d8e8;
   }
   
   /* ===== Core boxes ===== */
-  .core-box { margin-bottom: 8px; }
-  .core-title { font-size: 10pt; font-weight: 700; color: #1a1a1a; margin-bottom: 4px; border-bottom: 1px solid #ddd; padding-bottom: 2px; }
-  .core-content { font-size: 9.5pt; color: #444; line-height: 1.7; }
-  .core-content strong { color: #111; }
+  .core-box { 
+    background: #f8fafc; 
+    border: 1px solid #e0eaf0;
+    border-left: 3px solid #3282b8;
+    border-radius: 0 6px 6px 0;
+    padding: 8px 12px; 
+    margin-bottom: 8px;
+  }
+  .core-title { font-size: 10pt; font-weight: 700; color: #0f4c75; margin-bottom: 5px; }
+  .core-content { font-size: 9pt; color: #444; line-height: 1.7; }
+  .core-content strong { color: #0f4c75; }
   
   /* ===== Projects ===== */
-  .project { margin-bottom: 8px; }
-  .project-title { font-size: 10pt; font-weight: 700; color: #1a1a1a; margin-bottom: 2px; }
-  .project-content { font-size: 9.5pt; color: #444; line-height: 1.6; }
+  .project { 
+    background: #f8fafc;
+    border: 1px solid #e0eaf0;
+    border-radius: 6px;
+    padding: 8px 12px; 
+    margin-bottom: 8px;
+  }
+  .project-title { font-size: 10pt; font-weight: 700; color: #0f4c75; margin-bottom: 3px; }
+  .project-content { font-size: 9pt; color: #444; line-height: 1.65; }
   
   /* ===== Tables ===== */
-  table { width: 100%; border-collapse: collapse; font-size: 9.5pt; }
-  th { background: #1a1a1a; color: #fff; padding: 4px 8px; text-align: left; font-weight: 600; }
-  td { padding: 4px 8px; border-bottom: 1px solid #e0e0e0; color: #333; vertical-align: top; }
-  tr:nth-child(even) td { background: #f9f9f9; }
+  table { width: 100%; border-collapse: collapse; font-size: 9pt; }
+  th { 
+    background: linear-gradient(90deg, #0f4c75, #3282b8); 
+    color: #fff; padding: 5px 10px; text-align: left; font-weight: 600; 
+  }
+  td { padding: 5px 10px; border-bottom: 1px solid #e0eaf0; color: #333; vertical-align: top; }
+  tr:nth-child(even) td { background: #f8fafc; }
   
   /* ===== Papers ===== */
   .paper-list { list-style: none; padding: 0; }
-  .paper-list li { margin-bottom: 5px; font-size: 9.5pt; line-height: 1.5; color: #333; }
-  .paper-num { font-weight: 700; color: #111; }
-  .paper-journal { font-style: italic; color: #444; }
-  .tag-pending { background: #e0e0e0; color: #555; font-size: 8pt; padding: 1px 4px; border-radius: 2px; }
+  .paper-list li { margin-bottom: 5px; font-size: 9pt; line-height: 1.5; color: #333; }
+  .paper-num { font-weight: 700; color: #0f4c75; }
+  .paper-journal { font-style: italic; color: #3282b8; }
+  .tag-pending { background: #e8f4fc; color: #0f4c75; font-size: 7.5pt; padding: 1px 5px; border-radius: 3px; border: 1px solid #b8d8e8; }
   
   /* ===== Advantages ===== */
-  .adv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; }
-  .adv-item { font-size: 9.5pt; color: #333; }
-  .adv-title { font-weight: 700; color: #111; }
+  .adv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 10px; }
+  .adv-item { 
+    background: linear-gradient(135deg, #e8f4fc 0%, #d4edf7 100%);
+    padding: 7px 10px; border-radius: 6px; font-size: 9pt; color: #333;
+    border: 1px solid #b8d8e8;
+  }
+  .adv-title { font-weight: 700; color: #0f4c75; }
   
-  .hr { border: none; border-top: 1px solid #ddd; margin: 10px 0; }
+  .hr { border: none; border-top: 2px solid #3282b8; margin: 12px 0; opacity: 0.3; }
   
   /* ===== Page break ===== */
   .page-break { page-break-after: always; }
   
+  /* ===== Course tags ===== */
+  .course-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+  .course-tag { background: #f0f7fb; color: #555; padding: 2px 8px; border-radius: 3px; font-size: 8.5pt; border: 1px solid #d0e8f0; }
+  
   @media print {
-    body { font-size: 10pt; }
+    body { font-size: 9.5pt; }
     .section { page-break-inside: avoid; }
+    .header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .section-title { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .tag { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .adv-item { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   }
 </style>
 </head>
@@ -108,16 +157,18 @@
 
 <!-- ===== PAGE 1 ===== -->
 <div class="header">
-  <div class="name">冯 泽 宇</div>
-  <div class="subtitle">AI算法 / 大模型开发 / 大模型应用</div>
+  <div class="header-content">
+    <div class="name">冯 泽 宇</div>
+    <div class="subtitle">AI算法 / 大模型开发 / 大模型应用</div>
+  </div>
 </div>
 
 <div class="info-bar">
-  <span>📞 18973253969</span>
-  <span>✉ sxjl3496@gmail.com</span>
-  <span>💬 sxjl3496</span>
-  <span>🎓 西南财经大学 · 数理金融学 · 博士</span>
-  <span>🏛️ 中共党员</span>
+  <span><span class="info-dot">📞</span>18973253969</span>
+  <span><span class="info-dot">✉</span>sxjl3496@gmail.com</span>
+  <span><span class="info-dot">💬</span>sxjl3496</span>
+  <span><span class="info-dot">🎓</span>西南财经大学 · 数理金融学 · 博士</span>
+  <span><span class="info-dot">🏛️</span>中共党员</span>
 </div>
 
 <div class="objective">
@@ -161,18 +212,20 @@
     </div>
   </div>
   
-  <div class="skills-row">
-    <span class="skill">LangChain</span>
-    <span class="skill">PyTorch</span>
-    <span class="skill">LLM微调</span>
-    <span class="skill">RAG</span>
-    <span class="skill">向量数据库</span>
-    <span class="skill">贝叶斯优化</span>
-    <span class="skill">ABM建模</span>
-    <span class="skill">Python</span>
-    <span class="skill">NetLogo</span>
-    <span class="skill">Claude Code</span>
-    <span class="skill">OpenClaw</span>
+  <div style="margin-top:6px;">
+    <div class="skills-row">
+      <span class="skill">LangChain</span>
+      <span class="skill">PyTorch</span>
+      <span class="skill">LLM微调</span>
+      <span class="skill">RAG</span>
+      <span class="skill">向量数据库</span>
+      <span class="skill">贝叶斯优化</span>
+      <span class="skill">ABM建模</span>
+      <span class="skill">Python</span>
+      <span class="skill">NetLogo</span>
+      <span class="skill">Claude Code</span>
+      <span class="skill">OpenClaw</span>
+    </div>
   </div>
 </div>
 
@@ -217,8 +270,16 @@
     博士论文：《改善彩民结构与彩票销量的理论、实证及仿真研究》<br>
     代码开源：github.com/sxjl3496-spec/The-Research-on-Improving-the-Structure-of-Lottery-Players-and-Lottery-Sales
   </div>
-  <div style="margin-top:8px; font-size:9.5pt; color:#444;">
-    <strong>主修课程：</strong>高级计量经济学 · 高级宏观经济学 · 数理经济学 · 行为经济学 · 概率论 · 金融随机分析 · 高级数理金融学 · ABM建模 · 贝叶斯统计
+  <div class="course-tags">
+    <span class="course-tag">高级计量经济学</span>
+    <span class="course-tag">高级宏观经济学</span>
+    <span class="course-tag">数理经济学</span>
+    <span class="course-tag">行为经济学</span>
+    <span class="course-tag">概率论</span>
+    <span class="course-tag">金融随机分析</span>
+    <span class="course-tag">高级数理金融学</span>
+    <span class="course-tag">ABM建模</span>
+    <span class="course-tag">贝叶斯统计</span>
   </div>
 </div>
 
@@ -234,8 +295,8 @@
       <tr><td>2017年 – 2020年</td><td>文都教育集团</td><td>考研数学讲师、经济学1V1授课</td></tr>
     </tbody>
   </table>
-  <div style="margin-top:6px; font-size:9.5pt; color:#444;">
-    累计课堂授课 <strong>500+ 小时</strong>，具备将复杂技术概念转化为清晰表达的能力。擅长跨学科沟通，能够在技术团队与业务方之间搭建理解桥梁。
+  <div style="margin-top:6px; font-size:9pt; color:#555;">
+    累计课堂授课 <strong style="color:#0f4c75;">500+ 小时</strong>，具备将复杂技术概念转化为清晰表达的能力。擅长跨学科沟通，能够在技术团队与业务方之间搭建理解桥梁。
   </div>
 </div>
 
